@@ -1,104 +1,128 @@
 @charset "utf-8";
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 /* Základní styly pro stránku */
 body {
-	background-color:#F7F7F7;
+	background-color: #F7F7F7;
 	margin-top: 0em;
 }
 
 #menu {
-    position: sticky;
-    top: 0;
-    background-color: white;
-    z-index: 199;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    align-items: center; /* Vertikální zarovnání na střed */
-    padding: 0.5em 1em;
-    margin: auto;
-    height: 50px;
+	position: sticky;
+	top: 0;
+	background-color: white;
+	z-index: 199;
+	font-family: 'Roboto', sans-serif;
+	display: flex;
+	align-items: center;
+	/* Vertikální zarovnání na střed */
+	padding: 0.5em 1em;
+	margin: auto;
+	height: 50px;
 
 }
 
 
 nav {
-    display: flex; /* Flexbox pro horizontální zarovnání */
-    gap: 1em; /* Menší mezera mezi tlačítky */
-    font-size: 1.2em; /* Základní velikost textu */
-    flex-grow: 1; /* Umožní tlačítkům zabrat zbývající prostor */
-    justify-content: flex-end; /* Zarovnat tlačítka doprava */
-    align-items: center; /* Vertikální zarovnání na střed */
+	display: flex;
+	/* Flexbox pro horizontální zarovnání */
+	gap: 1em;
+	/* Menší mezera mezi tlačítky */
+	font-size: 1.2em;
+	/* Základní velikost textu */
+	flex-grow: 1;
+	/* Umožní tlačítkům zabrat zbývající prostor */
+	justify-content: flex-end;
+	/* Zarovnat tlačítka doprava */
+	align-items: center;
+	/* Vertikální zarovnání na střed */
 }
 
 .separator {
-    font-size: 1.2em; /* Velikost písma stejná jako pro tlačítka */
-    color: black; /* Barva textu */
-    margin: -1em; /* Mezera na obou stranách */
-    line-height: 50px; /* Vertikální zarovnání na střed */
+	font-size: 1.2em;
+	/* Velikost písma stejná jako pro tlačítka */
+	color: black;
+	/* Barva textu */
+	margin: -1em;
+	/* Mezera na obou stranách */
+	line-height: 50px;
+	/* Vertikální zarovnání na střed */
 }
 
 
 
 #menu-content {
-    display: flex;
-    align-items: center; /* Vertikální zarovnání na střed */
-    flex-grow: 1; /* Umožní obsahu expandovat do zbývajícího místa */
+	display: flex;
+	align-items: center;
+	/* Vertikální zarovnání na střed */
+	flex-grow: 1;
+	/* Umožní obsahu expandovat do zbývajícího místa */
 }
 
 #menu nav {
-    display: flex;
-    gap: 2em; /* Mezera mezi tlačítky */
-    font-size: 1.2em; /* Základní velikost textu */
+	display: flex;
+	gap: 2em;
+	/* Mezera mezi tlačítky */
+	font-size: 1.2em;
+	/* Základní velikost textu */
 }
 
 #menu nav div {
-    cursor: pointer; /* Změní kurzor na ukazatel při najetí */
+	cursor: pointer;
+	/* Změní kurzor na ukazatel při najetí */
 }
 
 #menu nav a {
-    text-decoration: none;
-    color: black;
-    font-weight: normal;
+	text-decoration: none;
+	color: black;
+	font-weight: normal;
 }
 
 #menu nav a:hover {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 /* Nová třída pro border */
 #menu::after {
-    content: ""; /* Pseudo-element potřebuje obsah */
-    position: absolute; /* Umožní mu se posunout na pozici */
-    left: 5em; /* Zarovnat doleva */
-    right: 5em; /* Zarovnat doprava */
-    bottom: 0em; /* Dole */
-    height: 0.5px; /* Výška spodní hrany */
-    background-color: #C1C1C1; /* Barva spodní hrany */
+	content: "";
+	/* Pseudo-element potřebuje obsah */
+	position: absolute;
+	/* Umožní mu se posunout na pozici */
+	left: 5em;
+	/* Zarovnat doleva */
+	right: 5em;
+	/* Zarovnat doprava */
+	bottom: 0em;
+	/* Dole */
+	height: 0.5px;
+	/* Výška spodní hrany */
+	background-color: #C1C1C1;
+	/* Barva spodní hrany */
 }
 
 #logo {
-    display: flex;
+	display: flex;
 	align-items: center;
 }
 
 #logo img {
-    margin-right: 10px;
+	margin-right: 10px;
 }
 
 #logo h1 {
-    margin: 0;
+	margin: 0;
 }
 
-#menu label, #menu input {
+#menu label,
+#menu input {
 	display: none;
-  }
+}
 
-nav  {
-    display: flex;
+nav {
+	display: flex;
 
 }
 
@@ -112,7 +136,7 @@ nav  {
 
 .obsah-stranky {
 	background-color: white;
-	text-align:start;
+	text-align: start;
 	font-family: 'Roboto', sans-serif;
 	padding-top: 1em;
 	margin-top: -0.3em;
@@ -122,10 +146,12 @@ nav  {
 
 
 h1 {
-	text-transform: uppercase; /* Převod na velká písmena */ 
-	letter-spacing: 1.5px; /* Prostrkání */
+	text-transform: uppercase;
+	/* Převod na velká písmena */
+	letter-spacing: 1.5px;
+	/* Prostrkání */
 	font-size: 1.5em;
-    margin-bottom: 5px;
+	margin-bottom: 5px;
 	margin-top: 0em;
 
 }
@@ -133,290 +159,341 @@ h1 {
 
 
 nav div {
-  /* Pokud potřebuješ specifické styly pro jednotlivá tlačítka */
-  cursor: pointer; /* Změní kurzor na ukazatel při najetí */
+	/* Pokud potřebuješ specifické styly pro jednotlivá tlačítka */
+	cursor: pointer;
+	/* Změní kurzor na ukazatel při najetí */
 }
 
 nav a {
-  text-decoration: none;
-  color: black;
-  font-weight: normal;
+	text-decoration: none;
+	color: black;
+	font-weight: normal;
 }
 
 nav a:hover {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 
-.hlavni{
+.hlavni {
 	background-color: white;
-	margin:auto;/*vycentruje na střed monitoru*/
+	margin: auto;
+	/*vycentruje na střed monitoru*/
 	text-align: center;
 	padding-top: 0em;
-	display: flex;/*převede blokové prvky na řádkové*/
-	flex-wrap: wrap;/*vytvoří symetrickou mřížku*/
-	justify-content:flex-start;/*vycentrování mřížky*/
-	
+	display: flex;
+	/*převede blokové prvky na řádkové*/
+	flex-wrap: wrap;
+	/*vytvoří symetrickou mřížku*/
+	justify-content: flex-start;
+	/*vycentrování mřížky*/
+
 }
-.text-serie{
+
+.text-serie {
 	padding-top: 1em;
 	padding-bottom: 0.3em;
 }
-.hlavni > div{
-	height: 125px;/*VELIKOST OBRÁZKŮ!!!!!!!!!!!!!!!!!!!!!!*/
-	background-color:white;
+
+.hlavni>div {
+	height: 125px;
+	/*VELIKOST OBRÁZKŮ!!!!!!!!!!!!!!!!!!!!!!*/
+	background-color: white;
 	margin: 0.8px;
 }
-.hlavni > div > a > img{
-	width:100%;
-	height:100%;
-	object-fit: cover;/*přizpůsobuje objekty s různým poměrem stran*/
+
+.hlavni>div>a>img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/*přizpůsobuje objekty s různým poměrem stran*/
 }
-.hlavni > div > a > img:hover{
+
+.hlavni>div>a>img:hover {
 	transition: all 0.2s;
-	filter:brightness(80%);
+	filter: brightness(80%);
 }
 
 
 p {
 	text-align: left;
 	font-size: 1em;
-	line-height: 1.5em;	
+	line-height: 1.5em;
 }
 
-.Bold-text{
+.Bold-text {
 	font-weight: bold;
 }
 
 
-.Obrazek_text_maly{
-	font-size:0.8em;
+.Obrazek_text_maly {
+	font-size: 0.8em;
 	font-weight: lighter;
 }
-.Obrazek_text{
+
+.Obrazek_text {
 	padding-left: 9.5em;
 	padding-top: 0.5em;
 }
 
-a{
-	color:black;
+a {
+	color: black;
 	text-decoration: none;
 }
 
-a:hover{
-	color:black;
+a:hover {
+	color: black;
 	font-weight: bold;
 }
 
-.bold{
+.bold {
 	font-weight: bold;
 }
 
-.klik:hover ~ .bold{
+.klik:hover~.bold {
 	font-weight: normal;
-	
+
 }
 
 nav {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 
 
 /* Break pointy pro různé šířky obrazovek */
 @media screen and (max-width: 7680px) {
-	#menu, .obsah-stranky {
+
+	#menu,
+	.obsah-stranky {
 		width: 60%;
-		padding:0.5em 5em 0em 5em;
+		padding: 0.5em 5em 0em 5em;
 	}
-	
+
 
 }
-	
-	
+
+
 
 @media screen and (max-width: 3840px) {
-	#menu, .obsah-stranky {
+
+	#menu,
+	.obsah-stranky {
 		width: 60%;
-		padding:0.5em 5em 0em 5em;
+		padding: 0.5em 5em 0em 5em;
 	}
-	
+
 }
 
 @media screen and (max-width: 1920px) {
-	#menu, .obsah-stranky {
+
+	#menu,
+	.obsah-stranky {
 		width: 70%;
-		padding:0.5em 5em 0em 5em;
+		padding: 0.5em 5em 0em 5em;
 	}
-	
+
 }
 
 @media screen and (max-width: 1366px) {
-	#menu, .obsah-stranky {
+
+	#menu,
+	.obsah-stranky {
 		width: 80%;
-		padding:0.5em 5em 0em 5em;
+		padding: 0.5em 5em 0em 5em;
+	}
+
+	@media screen and (max-width: 1024px) {
+
+		#menu,
+		.obsah-stranky {
+			width: 90%;
+			padding: 0.5em;
+		}
+
+		#menu::after {
+			left: 0em;
+			/* Zarovnat doleva */
+			right: 0em;
+			/* Zarovnat doprava */
+		}
+
+
+
+	}
+
+	@media screen and (max-width: 768px) {
+
+		/* Show Hamburger Icon */
+		#menu label {
+			position: absolute;
+			right: 20px;
+			top: -8.5px;
+			display: inline-block;
+			color: black;
+			font-style: normal;
+			font-size: 2em;
+			padding: 10px;
+			align-items: center;
+		}
+
+		/* Break down menu items into vertical */
+		nav a {
+			box-sizing: border-box;
+			display: block;
+			width: 100px;
+
+
+		}
+
+		/* Toggle Show/Hide Menu */
+		#menu nav {
+			display: none;
+
+		}
+
+		#menu input:checked~nav {
+			display: block;
+			position: absolute;
+			top: -10px;
+		}
+
+
+		nav p,
+		nav .separator {
+			display: block;
+			/* Nastaví prvky pod sebe */
+			text-align: left;
+			/* Zarovná text vlevo */
+			width: 100%;
+			/* Rozšíří na celou šířku */
+			margin: 0.2em 0;
+			/* Přidá vertikální mezeru mezi odkazy */
+			
+		}
+
+		#hamburger:checked~nav .separator {
+			display: none;
+			/* Skryje .separator */
+		}
+
+		#menu,
+		.obsah-stranky {
+			width: 90%;
+			padding: 0.5em;
+		}
+
+		#menu::after {
+			left: 0em;
+			/* Zarovnat doleva */
+			right: 0em;
+			/* Zarovnat doprava */
+		}
+
+		nav {
+			background-color: white;
+			padding: 15px;
+			z-index: 150;
+			margin-top: 60px;
+
+		}
+
+		#menu {
+			position: relative;
+
+		}
+
+
+
+		#menu label:hover {
+			font-weight: bold;
+			cursor: pointer;
+			/* Změní kurzor na ukazatel při najetí */
+		}
+
+		@media screen and (max-width: 523px) {
+
+			#menu,
+			.obsah-stranky {
+				width: 100%;
+				padding: 0.5em;
+			}
+
+			#menu::after {
+				left: 0em;
+				/* Zarovnat doleva */
+				right: 0em;
+				/* Zarovnat doprava */
+			}
+
+		}
+
+		@media screen and (max-width: 500px) {
+
+			#menu,
+			.obsah-stranky {
+				width: 100%;
+				padding: 0.5em;
+			}
+
+			#menu::after {
+				left: 0em;
+				/* Zarovnat doleva */
+				right: 0em;
+				/* Zarovnat doprava */
+			}
+
+		}
+
+		@media screen and (max-width: 360px) {
+
+			#menu,
+			.obsah-stranky {
+				width: 100%;
+				padding: 0.5em;
+			}
+
+			#menu::after {
+				left: 0em;
+				/* Zarovnat doleva */
+				right: 0em;
+				/* Zarovnat doprava */
+			}
+
+			#menu label {
+				position: absolute;
+				right: 0px;
+				top: -8.5px;
+				display: inline-block;
+				color: black;
+				font-style: normal;
+				font-size: 2em;
+				padding: 10px;
+				align-items: center;
+			}
+		}
+
+
+	}
+
+	@media screen and (max-width: 300px) {
+
+		#menu,
+		.obsah-stranky {
+			width: 100%;
+			padding: 0.5em;
+		}
+
+		#menu::after {
+			left: 0em;
+			/* Zarovnat doleva */
+			right: 0em;
+			/* Zarovnat doprava */
+		}
+
+
+	}
+
+
 }
-
-@media screen and (max-width: 1024px) {
-	#menu, .obsah-stranky {
-		width: 90%;
-		padding:0.5em;
-	}
-
-	#menu::after {
-        left: 0em; /* Zarovnat doleva */
-        right: 0em; /* Zarovnat doprava */
-    }
-
-
-
-}
-
-@media screen and (max-width: 768px) {
-
-	/* Show Hamburger Icon */
-	#menu label {
-	  position: absolute;
-	  right: 20px;
-	  top: -8.5px;
-	  display: inline-block;
-	  color:black;
-	  font-style: normal;
-	  font-size: 2em;
-	  padding: 10px;
-	  align-items: center;
-	}
-  
-	/* Break down menu items into vertical */
-	nav a {
-	  box-sizing: border-box;
-	  display: block;
-	  width: 100px;
-	
-
-	}
-  
-	/* Toggle Show/Hide Menu */
-	#menu nav {
-	  display: none;
-
-	}
-  
-	#menu input:checked ~ nav {
-	  display: block;
-	  position: absolute;
-	  top: -10px;
-	}
-
-
-	nav p, nav .separator {
-    display: block;      /* Nastaví prvky pod sebe */
-    text-align: left;    /* Zarovná text vlevo */
-    width: 100%;         /* Rozšíří na celou šířku */
-    margin: 0.2em 0;     /* Přidá vertikální mezeru mezi odkazy */
-}
-
-#hamburger:checked ~ nav .separator {
-    display: none;          /* Skryje .separator */
-}
-
-	    #menu, .obsah-stranky {
-        width: 90%;
-        padding: 0.5em;
-    }
-
-    #menu::after {
-        left: 0em; /* Zarovnat doleva */
-        right: 0em; /* Zarovnat doprava */
-    }
-
-	nav {
-		background-color: white;
-		padding: 15px;
-		z-index: 150;
-		margin-top: 60px;
-	
-	  }
-
-	#menu  {
-		position: relative;
-  
-	  }
-
-
-	
-	#menu label:hover {
-		font-weight: bold;
-		cursor: pointer; /* Změní kurzor na ukazatel při najetí */
-	}
-
-  @media screen and (max-width: 523px) {
-	#menu, .obsah-stranky {
-		width: 100%;
-		padding:0.5em;
-	}
-
-	#menu::after {
-        left: 0em; /* Zarovnat doleva */
-        right: 0em; /* Zarovnat doprava */
-    }
- 
-}
-
-@media screen and (max-width: 500px) {
-	#menu, .obsah-stranky {
-		width: 100%;
-		padding:0.5em;
-	}
-
-	#menu::after {
-        left: 0em; /* Zarovnat doleva */
-        right: 0em; /* Zarovnat doprava */
-    }
- 
-}
-
-@media screen and (max-width: 360px) {
-	#menu, .obsah-stranky {
-		width: 100%;
-		padding:0.5em;
-	}
-
-	#menu::after {
-        left: 0em; /* Zarovnat doleva */
-        right: 0em; /* Zarovnat doprava */
-    }
-
-	#menu label {
-		position: absolute;
-		right: 0px;
-		top: -8.5px;
-		display: inline-block;
-		color:black;
-		font-style: normal;
-		font-size: 2em;
-		padding: 10px;
-		align-items: center;
-	  }
-}
-
-
-  }
-
-  @media screen and (max-width: 300px) {
-	#menu, .obsah-stranky {
-		width: 100%;
-		padding:0.5em;
-	}
-
-	#menu::after {
-        left: 0em; /* Zarovnat doleva */
-        right: 0em; /* Zarovnat doprava */
-    }
-
-
-}
-
-
-  }
