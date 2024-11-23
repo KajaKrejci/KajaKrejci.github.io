@@ -1,0 +1,325 @@
+@charset "utf-8";
+
+* {
+  box-sizing: border-box;
+}
+
+/* Základní styly pro stránku */
+body {
+	background-color:#F7F7F7;
+}
+.nadpis {
+	background-color: white;
+	margin: auto; /* Vycentruje na střed monitoru */
+	text-align:start;
+	font-family: 'Roboto', sans-serif;
+	padding-top: 1em;
+}
+
+h1 {
+	text-transform: uppercase; /* Převod na velká písmena */ 
+	letter-spacing: 2px; /* Prostrkání */
+	font-size: 2.3em;
+    margin-bottom: -5px;
+	padding-bottom: 10px;
+
+}
+
+.buttons-Obrazy, .buttons-Profil, .buttons-Kontakt {
+    /* Zobrazí se vedle sebe jako text v paragrafu */
+    white-space: nowrap; /* Zachováváme text na jednom řádku */
+	display: flex;
+}
+
+.buttons-Obrazy {
+	letter-spacing: 2px; /* Prostrkání */
+	font-size: 1.2em;
+	padding-right: 2em;
+}
+
+.buttons-Profil {
+	letter-spacing: 2px; /* Prostrkání */
+	font-size: 1.2em;
+	padding-right: 2em;
+
+}
+
+.buttons-Kontakt {
+	letter-spacing: 2px; /* Prostrkání */
+	font-size: 1.2em;
+
+}
+
+
+
+.hlavni{
+	background-color: white;
+	margin:auto;/*vycentruje na střed monitoru*/
+	text-align: center;
+	padding-top: 0em;
+	display: flex;/*převede blokové prvky na řádkové*/
+	flex-wrap: wrap;/*vytvoří symetrickou mřížku*/
+	justify-content:flex-start;/*vycentrování mřížky*/
+	
+}
+.text-serie{
+	padding-top: 1em;
+	padding-bottom: 0.3em;
+}
+.hlavni > div{
+	height: 94.5px;
+	background-color: #B1B0B0;
+	margin: 1.5px;
+}
+.hlavni > div > a > img{
+	width:100%;
+	height:100%;
+	object-fit: cover;/*přizpůsobuje objekty s různým poměrem stran*/
+}
+.hlavni > div > a > img:hover{
+	transition: all 0.2s;
+	filter:brightness(80%);
+}
+
+
+p {
+	text-align: left;
+	font-size: 1em;
+	line-height: 1.5em;	
+}
+
+.Bold-text{
+	font-weight: bold;
+}
+.text_profil {
+     /* Pravý okraj */
+    padding-top: 1em; /* Padding nahoře */
+    margin: 0; /* Odstraníme margin, pokud byl nastaven výchozí margin */
+	text-align: left;
+	font-size: 1em;
+	line-height: 1.5em;	
+
+}
+
+.text_profil div {
+    padding-right: 0; /* Odstraníme pravý padding uvnitř divu */
+}
+
+.Obrazek_text_maly{
+	font-size:0.8em;
+	font-weight: lighter;
+}
+.Obrazek_text{
+	padding-left: 9.5em;
+	padding-top: 0.5em;
+}
+
+a{
+	color:black;
+	text-decoration: none;
+}
+
+a:hover{
+	color:black;
+	font-weight: bold;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.klik:hover ~ .bold{
+	font-weight: normal;
+	
+}
+
+
+/* Break pointy pro různé šířky obrazovek */
+@media screen and (max-width: 7680px) {
+	.nadpis {
+		width: 40%;
+		padding:0.5em 5em 0em 5em;
+	}
+	
+	.buttons-container {
+    display: flex;
+    border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	height: 40px;
+	align-items: center;
+
+}
+	
+	
+}
+
+@media screen and (max-width: 3840px) {
+	.nadpis {
+		width: 50%;
+		padding:0.5em 5em 0em 5em;
+	}
+	
+	.buttons-container {
+    display: flex;
+    border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	height: 40px;
+	align-items: center;
+
+}
+}
+
+@media screen and (max-width: 1920px) {
+	.nadpis {
+		width: 70%;
+		padding:0.5em 5em 0em 5em;
+	}
+	
+	.buttons-container {
+    display: flex;
+    border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	height: 40px;
+	align-items: center;
+
+}
+}
+
+@media screen and (max-width: 1366px) {
+	.nadpis {
+		width: 75%;
+		padding:0.5em 5em 0em 5em;
+	}
+	
+	.buttons-container {
+    display: flex;
+    border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	height: 40px;
+	align-items: center;
+
+}
+}
+
+@media screen and (max-width: 1024px) {
+	.nadpis {
+		width: 80%;
+		padding:0.5em 5em 0em 5em;
+	}
+	
+	.text_profil{
+		padding-right: 3em;
+	}
+	
+	.buttons-container {
+	display:block;
+    border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	height:125px;
+	align-items: center;
+	}
+	
+	.buttons-Obrazy p{
+		margin:10px 0px 0px 0px;
+		
+	}
+	.buttons-Profil p{
+		margin:10px 0px 0px 0px;
+	}
+	
+	.buttons-Kontakt p{
+		margin:10px 0px 0px 0px;
+	}
+
+
+}
+
+@media screen and (max-width: 768px)   {
+	.nadpis {
+		width: 90%;
+		padding:0.5em;
+	}
+	
+   .text_profil{
+		padding-right: 3em;
+	}
+	
+	.buttons-container {
+	display:block;
+    border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	height:125px;
+	align-items: center;
+	}
+	
+	.buttons-Obrazy p{
+		margin:10px 0px 0px 0px;
+		
+	}
+	.buttons-Profil p{
+		margin:10px 0px 0px 0px;
+	}
+	
+	.buttons-Kontakt p{
+		margin:10px 0px 0px 0px;
+	}
+}
+
+@media screen and (max-width: 740px) {
+	.nadpis {
+		width: 90%;
+		padding:0.5em;
+	}
+	.text_profil{
+		padding-right: 3em;
+	}
+	
+	.buttons-container {
+	display:block;
+    border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	height:125px;
+	align-items: center;
+	}
+	
+	.buttons-Obrazy p{
+		margin:10px 0px 0px 0px;
+		
+	}
+	.buttons-Profil p{
+		margin:10px 0px 0px 0px;
+	}
+	
+	.buttons-Kontakt p{
+		margin:10px 0px 0px 0px;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.nadpis {
+		width: 100%;
+		padding:0.5em;
+	}
+	
+	.text_profil{
+		padding-right: 3em;
+	}
+	.buttons-container {
+	display:block;
+    border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	height:125px;
+	align-items: center;
+	}
+	.buttons-Obrazy p{
+		margin:10px 0px 0px 0px;
+		
+	}
+	.buttons-Profil p{
+		margin:10px 0px 0px 0px;
+	}
+	
+	.buttons-Kontakt p{
+		margin:10px 0px 0px 0px;
+	}
+}
