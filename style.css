@@ -134,7 +134,7 @@ nav {
 
 
 
-.obsah-stranky {
+#obsah-stranky {
 	background-color: white;
 	text-align: start;
 	font-family: 'Roboto', sans-serif;
@@ -260,13 +260,41 @@ nav {
 	align-items: center;
 }
 
+.footer {
+    background-color:white;
+    color:black;
+    text-align: center;
+    padding: 20px;
+   
+}
+
+.footer .footer-content {
+    margin: 0 auto;
+}
+
+.footer .social-links {
+    margin-top: 5px;
+}
+
+.footer .social-links a {
+    color:black;
+    text-decoration: none;
+    margin: 0 10px;
+
+}
+
+.footer .social-links a:hover {
+    text-decoration: underline;
+}
+
+
 
 
 /* Break pointy pro různé šířky obrazovek */
 @media screen and (max-width: 7680px) {
 
 	#menu,
-	.obsah-stranky {
+	#obsah-stranky {
 		width: 60%;
 		padding: 0.5em 5em 0em 5em;
 	}
@@ -279,7 +307,7 @@ nav {
 @media screen and (max-width: 3840px) {
 
 	#menu,
-	.obsah-stranky {
+	#obsah-stranky {
 		width: 60%;
 		padding: 0.5em 5em 0em 5em;
 	}
@@ -289,7 +317,7 @@ nav {
 @media screen and (max-width: 1920px) {
 
 	#menu,
-	.obsah-stranky {
+	#obsah-stranky {
 		width: 70%;
 		padding: 0.5em 5em 0em 5em;
 	}
@@ -299,7 +327,7 @@ nav {
 @media screen and (max-width: 1366px) {
 
 	#menu,
-	.obsah-stranky {
+	#obsah-stranky {
 		width: 80%;
 		padding: 0.5em 5em 0em 5em;
 	}
@@ -307,7 +335,7 @@ nav {
 	@media screen and (max-width: 1024px) {
 
 		#menu,
-		.obsah-stranky {
+		#obsah-stranky {
 			width: 90%;
 			padding: 0.5em;
 		}
@@ -373,14 +401,18 @@ nav {
 			
 		}
 
+		
+
 		#hamburger:checked~nav .separator {
 			display: none;
 			/* Skryje .separator */
 		}
 
+
+		
 		#menu,
-		.obsah-stranky {
-			width: 90%;
+		#obsah-stranky {
+			width: 100%;
 			padding: 0.5em;
 		}
 
@@ -400,7 +432,7 @@ nav {
 		}
 
 		#menu {
-			position: relative;
+			position:relative;
 
 		}
 
@@ -415,7 +447,7 @@ nav {
 		@media screen and (max-width: 523px) {
 
 			#menu,
-			.obsah-stranky {
+			#obsah-stranky {
 				width: 100%;
 				padding: 0.5em;
 			}
@@ -432,7 +464,7 @@ nav {
 		@media screen and (max-width: 500px) {
 
 			#menu,
-			.obsah-stranky {
+			#obsah-stranky {
 				width: 100%;
 				padding: 0.5em;
 			}
@@ -449,7 +481,7 @@ nav {
 		@media screen and (max-width: 360px) {
 
 			#menu,
-			.obsah-stranky {
+			#obsah-stranky {
 				width: 100%;
 				padding: 0.5em;
 			}
@@ -480,7 +512,7 @@ nav {
 	@media screen and (max-width: 300px) {
 
 		#menu,
-		.obsah-stranky {
+		#obsah-stranky {
 			width: 100%;
 			padding: 0.5em;
 		}

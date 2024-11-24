@@ -22,6 +22,8 @@
 <meta name="msapplication-TileColor" content="#2b5797">
 <meta name="msapplication-config" content="favicons/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
+
+<script src="https://kit.fontawesome.com/7e35b05a57.js" crossorigin="anonymous"></script>
 	
 </head>
 <body>
@@ -35,7 +37,7 @@
 
     <label for="hamburger">&#9776;</label>
     <input type="checkbox" id="hamburger"/>
-
+    
   <nav>
             <p><a href="index.html">Obrazy</a></p>
             <p><a href="hyperlinky/Karel_Krejci_profil_about.html">Profil</a></p>
@@ -47,7 +49,7 @@
  
 </div>
 
-<div class="obsah-stranky">
+<div id="obsah-stranky">
 
   <div class="text-serie">
     <div style="text-align: left;font-size: 0.8em;">Plenér, 2024</div>
@@ -447,7 +449,18 @@
 <div><a href="IMG/2021/Bez_nazvu_10_72dpi_700.png" data-lightbox="example-set" title="Bez názvu&lt;br&gt;tuž, papír, 28 × 42 cm, 2021"><img src="IMG/2021_zmensene_obrazky/Bez_nazvu_10_72dpi_100.png" width="800" height="1097" alt=""></a></div>
 <div><a href="IMG/2021/Bez_nazvu_11_72dpi_700.png" data-lightbox="example-set" title="Bez názvu&lt;br&gt;tuž, papír, 28 × 42 cm, 2021"><img src="IMG/2021_zmensene_obrazky/Bez_nazvu_11_72dpi_100.png" width="800" height="1097" alt=""></a></div>
 
-	
+</div>
+
+<footer class="footer">
+  <div class="footer-content">
+      <p>&copy; 2024 Karel Krejčí. Všechna práva vyhrazena.</p>
+      <div class="social-links">
+          <a href="https://www.instagram.com/karel_krejci_/" target="_blank" style="margin-left: 2.2em;"><i class="fa-brands fa-instagram"></i></a><br>
+          <a href="mailto:kaja4.krejci@gmail.com" style="margin-left: 2em;"><i class="far fa-envelope fa-2x"></i></a><br>
+          <a href="tel:+420 702 397 882" style="margin-left: 2.8em;"><i class="fas fa-mobile-alt fa-2x"></i></a><br>
+      </div>
+  </div>
+</footer>	
 	
 	
 <script src="lightbox-plus-jquery.min.js"></script>
@@ -502,8 +515,70 @@ function zpet1() {
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+
+<script>
+  function handleResponsiveMenu() {
+      const hamburger = document.getElementById('hamburger');
+      const obsahStranky = document.getElementById('obsah-stranky');
+      const label = document.querySelector('label[for="hamburger"]');
+      const navItems = document.querySelectorAll('nav p a'); // Vyhledáme všechny odkazy v navigaci
+
+      if (window.matchMedia("(max-width: 768px)").matches) {
+          hamburger.addEventListener('change', function () {
+              if (hamburger.checked) {
+                  obsahStranky.style.paddingTop = '190px'; // Přidá odsazení
+                  label.innerHTML = '&#10005;'; // Změní ikonu na "X"
+
+                  // Přidáme odrážky a uložíme původní text
+                  navItems.forEach(item => {
+                      if (!item.dataset.originalText) {
+                          item.dataset.originalText = item.textContent.trim(); // Uložíme původní text
+                          item.textContent = `‣ ${item.dataset.originalText}`; // Přidáme odrážku
+                      }
+                  });
+              } else {
+                  obsahStranky.style.paddingTop = '0'; // Resetuje odsazení
+                  label.innerHTML = '&#9776;'; // Změní ikonu zpět na hamburger
+
+                  // Obnovíme původní text
+                  navItems.forEach(item => {
+                      if (item.dataset.originalText) {
+                          item.textContent = item.dataset.originalText; // Obnovíme původní text
+                          delete item.dataset.originalText; // Odstraníme uložený atribut
+                      }
+                  });
+              }
+          });
+      } else {
+          obsahStranky.style.paddingTop = '0';
+          label.innerHTML = '&#9776;'; // Ujistíme se, že ikona je hamburger
+
+          // Obnovíme původní text mimo responsivní režim
+          navItems.forEach(item => {
+              if (item.dataset.originalText) {
+                  item.textContent = item.dataset.originalText;
+                  delete item.dataset.originalText;
+              }
+          });
+      }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+      handleResponsiveMenu();
+  });
+
+  window.addEventListener('resize', function () {
+      handleResponsiveMenu();
+  });
+</script>
+
+
+
+
+
+
 	
-</div>
+
 </div>
 	
 
