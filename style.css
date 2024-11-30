@@ -266,6 +266,12 @@ nav {
 	align-items: center;
 }
 
+.konec {
+	border-top: 0.5px solid #C1C1C1;
+	text-align: left;
+	font-size: 0.8em;
+	padding-bottom: 10px;
+}
 
 /* Break pointy pro různé šířky obrazovek */
 @media screen and (max-width: 7680px) {
@@ -334,12 +340,13 @@ nav {
 		#menu label {
 			position: absolute;
 			right: 20px;
-			top: -8.5px;
+	
 			display: inline-block;
 			color: black;
 			font-style: normal;
 			font-size: 2em;
 			padding: 10px;
+			padding-top: 0;
 			align-items: center;
 			
 		}
@@ -414,6 +421,8 @@ nav {
 			/* Změní kurzor na ukazatel při najetí */
 		}
 
+
+
 		@media screen and (max-width: 523px) {
 
 			#menu,
@@ -448,6 +457,30 @@ nav {
 
 		}
 
+		@media screen and (max-width: 425px) {
+
+			#menu,
+			#obsah-stranky {
+				width: 100%;
+				padding: 0.5em;
+			}
+
+			#menu::after {
+				left: 0em;
+				/* Zarovnat doleva */
+				right: 0em;
+				/* Zarovnat doprava */
+			}
+			.hlavni>div {
+				height: 105px;
+				/*VELIKOST OBRÁZKŮ!!!!!!!!!!!!!!!!!!!!!!*/
+				background-color: white;
+				margin: 0.8px;
+			}
+
+		}
+
+
 		@media screen and (max-width: 360px) {
 
 			#menu,
@@ -466,14 +499,15 @@ nav {
 			#menu label {
 				position: absolute;
 				right: 0px;
-				top: -8.5px;
 				display: inline-block;
 				color: black;
 				font-style: normal;
 				font-size: 2em;
 				padding: 10px;
+				padding-top: 0;
 				align-items: center;
 			}
+			
 		}
 
 
@@ -497,5 +531,34 @@ nav {
 
 	}
 
+	@media screen and (max-width: 280px) {
+
+		#menu,
+		#obsah-stranky {
+			width: 100%;
+			padding: 0.5em;
+		}
+
+		#menu::after {
+			left: 0em;
+			/* Zarovnat doleva */
+			right: 0em;
+			/* Zarovnat doprava */
+		}
+		#menu a {
+			font-size: 0.7em;
+		}
+		#menu label {
+			position: absolute;
+			right: 0px;
+			display: inline-block;
+			color: black;
+			font-style: normal;
+			font-size: 1.5em;
+			padding: 10px;
+			padding-top: 0;
+			align-items: center;
+		}
+	}
 
 }
