@@ -167,7 +167,7 @@ nav div {
 nav a {
 	text-decoration: none;
 	color: black;
-	font-weight: normal;
+	
 }
 
 nav a:hover {
@@ -193,6 +193,13 @@ nav a:hover {
 .text-serie {
 	padding-top: 1em;
 	padding-bottom: 0.3em;
+	
+}
+
+.text-obrazku {
+    text-align: left;
+	font-size: 0.8em;
+	
 }
 
 .hlavni>div {
@@ -221,10 +228,11 @@ p {
 	line-height: 1.5em;
 }
 
-.Bold-text {
-	font-weight: bold;
-}
 
+
+.bold {
+    font-weight: bold;
+}
 
 .Obrazek_text_maly {
 	font-size: 0.8em;
@@ -246,9 +254,7 @@ a:hover {
 	font-weight: bold;
 }
 
-.bold {
-	font-weight: bold;
-}
+
 
 .klik:hover~.bold {
 	font-weight: normal;
@@ -259,35 +265,6 @@ nav {
 	display: flex;
 	align-items: center;
 }
-
-.footer {
-    background-color:white;
-    color:black;
-    text-align: center;
-    padding: 20px;
-   
-}
-
-.footer .footer-content {
-    margin: 0 auto;
-}
-
-.footer .social-links {
-    margin-top: 5px;
-}
-
-.footer .social-links a {
-    color:black;
-    text-decoration: none;
-    margin: 0 10px;
-
-}
-
-.footer .social-links a:hover {
-    text-decoration: underline;
-}
-
-
 
 
 /* Break pointy pro různé šířky obrazovek */
@@ -364,41 +341,34 @@ nav {
 			font-size: 2em;
 			padding: 10px;
 			align-items: center;
+			
 		}
-
-		/* Break down menu items into vertical */
-		nav a {
-			box-sizing: border-box;
-			display: block;
-			width: 100px;
-
-
-		}
-
-		/* Toggle Show/Hide Menu */
 		#menu nav {
-			display: none;
-
-		}
-
-		#menu input:checked~nav {
-			display: block;
+			display: none; /* Ve výchozím stavu je skryto */
 			position: absolute;
-			top: -10px;
+			top: -10px; /* Zarovnání pod menu */
+			left: 0; /* Na začátek obrazovky */
+			right: 0; /* Na konec obrazovky */
+			width: 100%; /* Zabere celou šířku obrazovky */
+			background-color: white; /* Zajištění stejného pozadí */
+			z-index: 150; /* Nad ostatními prvky */
+			padding: 10px; /* Dodatečné odsazení obsahu */
+			border-bottom: 0.5px solid #C1C1C1;
 		}
-
-
+	
+		/* Když je hamburger aktivní */
+		#menu input:checked ~ nav {
+			display: block; /* Zobrazení menu */
+		}
+	
+		/* Přizpůsobení vnitřního obsahu nav */
+		nav a,
 		nav p,
 		nav .separator {
-			display: block;
-			/* Nastaví prvky pod sebe */
-			text-align: left;
-			/* Zarovná text vlevo */
-			width: 100%;
-			/* Rozšíří na celou šířku */
-			margin: 0.2em 0;
-			/* Přidá vertikální mezeru mezi odkazy */
-			
+			display: block; /* Každý odkaz na nový řádek */
+			text-align: left; /* Zarovnání vlevo */
+			width: 100%; /* Zabírá celou šířku rodiče */
+			margin: 0.5em 0; /* Mezera mezi odkazy */
 		}
 
 		
@@ -432,7 +402,7 @@ nav {
 		}
 
 		#menu {
-			position:relative;
+			position:sticky;
 
 		}
 
