@@ -455,7 +455,7 @@
     <p>&copy; 2024 Karel Krejčí. Všechna práva vyhrazena.</p>
 </div>
 
-
+</div>
 
 	
 	
@@ -513,59 +513,62 @@ function zpet1() {
 </script>
 
 <script>
-  function handleResponsiveMenu() {
-      const hamburger = document.getElementById('hamburger');
-      const obsahStranky = document.getElementById('obsah-stranky');
-      const label = document.querySelector('label[for="hamburger"]');
-      const navItems = document.querySelectorAll('nav p a'); // Vyhledáme všechny odkazy v navigaci
+function handleResponsiveMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const obsahStranky = document.getElementById('obsah-stranky');
+    const label = document.querySelector('label[for="hamburger"]');
+    const navItems = document.querySelectorAll('nav p a'); // Vyhledáme všechny odkazy v navigaci
 
-      if (window.matchMedia("(max-width: 768px)").matches) {
-          hamburger.addEventListener('change', function () {
-              if (hamburger.checked) {
-                  obsahStranky.style.paddingTop = '230px'; // Přidá odsazení
-                  label.innerHTML = '&#10005;'; // Změní ikonu na "X"
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        hamburger.addEventListener('change', function () {
+            if (hamburger.checked) {
+                obsahStranky.style.transition = "transform 0.5s ease-in-out"; // Přidání animace
+                obsahStranky.style.transform = 'translateY(200px)'; // Přesuneme stránku dolů
+                label.innerHTML = '&#10005;'; // Změní ikonu na "X"
 
-                  // Přidáme odrážky a uložíme původní text
-                  navItems.forEach(item => {
-                      if (!item.dataset.originalText) {
-                          item.dataset.originalText = item.textContent.trim(); // Uložíme původní text
-                          item.textContent = `‣ ${item.dataset.originalText}`; // Přidáme odrážku
-                      }
-                  });
-              } else {
-                  obsahStranky.style.paddingTop = '0'; // Resetuje odsazení
-                  label.innerHTML = '&#9776;'; // Změní ikonu zpět na hamburger
+                // Přidáme odrážky a uložíme původní text
+                navItems.forEach(item => {
+                    if (!item.dataset.originalText) {
+                        item.dataset.originalText = item.textContent.trim(); // Uložíme původní text
+                        item.textContent = `‣ ${item.dataset.originalText}`; // Přidáme odrážku
+                    }
+                });
+            } else {
+                obsahStranky.style.transition = "transform 0.5s ease-in-out"; // Přidání animace
+                obsahStranky.style.transform = 'translateY(0)'; // Resetujeme pozici
+                label.innerHTML = '&#9776;'; // Změní ikonu zpět na hamburger
 
-                  // Obnovíme původní text
-                  navItems.forEach(item => {
-                      if (item.dataset.originalText) {
-                          item.textContent = item.dataset.originalText; // Obnovíme původní text
-                          delete item.dataset.originalText; // Odstraníme uložený atribut
-                      }
-                  });
-              }
-          });
-      } else {
-          obsahStranky.style.paddingTop = '0';
-          label.innerHTML = '&#9776;'; // Ujistíme se, že ikona je hamburger
+                // Obnovíme původní text
+                navItems.forEach(item => {
+                    if (item.dataset.originalText) {
+                        item.textContent = item.dataset.originalText; // Obnovíme původní text
+                        delete item.dataset.originalText; // Odstraníme uložený atribut
+                    }
+                });
+            }
+        });
+    } else {
+        obsahStranky.style.transform = 'translateY(0)';
+        label.innerHTML = '&#9776;'; // Ujistíme se, že ikona je hamburger
 
-          // Obnovíme původní text mimo responsivní režim
-          navItems.forEach(item => {
-              if (item.dataset.originalText) {
-                  item.textContent = item.dataset.originalText;
-                  delete item.dataset.originalText;
-              }
-          });
-      }
-  }
+        // Obnovíme původní text mimo responsivní režim
+        navItems.forEach(item => {
+            if (item.dataset.originalText) {
+                item.textContent = item.dataset.originalText;
+                delete item.dataset.originalText;
+            }
+        });
+    }
+}
 
-  document.addEventListener('DOMContentLoaded', function () {
-      handleResponsiveMenu();
-  });
+document.addEventListener('DOMContentLoaded', function () {
+    handleResponsiveMenu();
+});
 
-  window.addEventListener('resize', function () {
-      handleResponsiveMenu();
-  });
+window.addEventListener('resize', function () {
+    handleResponsiveMenu();
+});
+
 </script>
 
 
@@ -575,9 +578,22 @@ function zpet1() {
 
 	
 
-</div>
-	
 
+	
+    <script>
+        document.querySelector("#hamburger").addEventListener("change", function () {
+            const nav = document.querySelector("#menu nav");
+            const menuDiv = document.querySelector("#menu div");
+
+            if (this.checked) {
+                nav.style.zIndex = "1"; // Nav je pod obsahem
+                menuDiv.style.zIndex = "10"; // Obsah je nahoře
+            } else {
+                nav.style.zIndex = ""; // Reset
+                menuDiv.style.zIndex = "";
+            }
+        });
+    </script>
 
 </body>
 	
