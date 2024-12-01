@@ -526,13 +526,7 @@ function handleResponsiveMenu() {
                 obsahStranky.style.transform = 'translateY(200px)'; // Přesuneme stránku dolů
                 label.innerHTML = '&#10005;'; // Změní ikonu na "X"
 
-                // Přidáme odrážky a uložíme původní text
-                navItems.forEach(item => {
-                    if (!item.dataset.originalText) {
-                        item.dataset.originalText = item.textContent.trim(); // Uložíme původní text
-                        item.textContent = `‣ ${item.dataset.originalText}`; // Přidáme odrážku
-                    }
-                });
+
             } else {
                 obsahStranky.style.transition = "transform 0.5s ease-in-out"; // Přidání animace
                 obsahStranky.style.transform = 'translateY(0)'; // Resetujeme pozici
@@ -574,9 +568,57 @@ window.addEventListener('resize', function () {
 
 
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const checkbox = document.getElementById('hamburger'); // ID checkboxu
+  const nav = document.querySelector('#menu nav');
+  
+  // Funkce pro detekci změny checkboxu a animaci
+  checkbox.addEventListener('change', function() {
+    if (checkbox.checked) {
+      // Pokud je checkbox zaškrtnutý, menu se zobrazí s animací dolů
+      nav.style.display = 'block';
+      nav.style.animation = 'slideDown 0.5s ease-out forwards';
+    } else {
+      // Pokud checkbox není zaškrtnutý, menu se schová s animací nahoru
+      nav.style.animation = 'slideUp 0.5s ease-in forwards';
+      // Nastavit display na "none" po skončení animace
+      setTimeout(() => {
+        nav.style.display = 'none';
+      }, 500); // Délka animace, aby se display změnil až po jejím dokončení
+    }
+  });
+});
 
+
+</script>
+
+<script>
+// Najdeme checkbox, nav a separatory
+const checkbox = document.getElementById('hamburger'); // ID vašeho checkboxu
+const nav = document.querySelector('#menu nav'); // Selektor pro vaše nav
+const separators = document.querySelectorAll('nav .separator'); // Všechny separatory
+
+// Sledujeme změny stavu checkboxu
+checkbox.addEventListener('change', function () {
+    if (!checkbox.checked) { // Pokud je checkbox deaktivován
+        // Skryjeme separator
+        nav.classList.add('hide-separator');
+
+        // Po 1 sekundě odstraníme obě třídy
+        setTimeout(() => {
+            nav.classList.remove('hide-separator');
+        }, 1000); // Doba trvání 1 sekunda
+    }
+});
+
+
+</script>
 	
+<script>
 
+    
+</script>
 
 	
     <script>
@@ -593,6 +635,8 @@ window.addEventListener('resize', function () {
             }
         });
     </script>
+
+
 
 </body>
 	
